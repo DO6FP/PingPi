@@ -108,8 +108,8 @@ while True:
 
       # login to owncloud  
       import owncloud
-      oc = owncloud.Client('cloud.your-domain.com')
-      oc.login('username', 'password')
+      oc = owncloud.Client(cloudURL)
+      oc.login(usr, passwd)
   
       # upload log file
       cloud_filename = "log/{}.csv".format(now.strftime("%Y_%m_%d_%H:%M:%S"))
@@ -130,8 +130,8 @@ while True:
         # send plot file to nextcloud
         time.sleep(2)
         cloud_filename = "plot/{}_latency.png".format(now.strftime("%Y_%m_%d_%H:%M:%S"))
-        oc = owncloud.Client('https://cloud.your-domain.com')
-        oc.login('username', 'password')
+        oc = owncloud.Client(cloudURL)
+        oc.login(usr, passwd)
         oc.put_file(cloud_filename, plot_latency_filename)
         print("File \"{}\" sent".format(cloud_filename))
         
@@ -153,8 +153,8 @@ while True:
         # send plot file to nextcloud
         time.sleep(2)
         cloud_filename = "plot/{}_uplink.png".format(now.strftime("%Y_%m_%d_%H:%M:%S"))
-        oc = owncloud.Client('https://cloud.your-domain.com')
-        oc.login('username', 'password')
+        oc = owncloud.Client(cloudURL)
+        oc.login(usr, passwd)
         oc.put_file(cloud_filename, plot_uplink_filename)
         print("File \"{}\" sent".format(cloud_filename))
         
@@ -176,8 +176,8 @@ while True:
         # send plot file to nextcloud
         time.sleep(2)
         cloud_filename = "plot/{}_downlink.png".format(now.strftime("%Y_%m_%d_%H:%M:%S"))
-        oc = owncloud.Client('https://cloud.your-domain.com')
-        oc.login('username', 'password')
+        oc = owncloud.Client(cloudURL)
+        oc.login(usr, passwd)
         oc.put_file(cloud_filename, plot_downlink_filename)
         print("File \"{}\" sent".format(cloud_filename))
         
