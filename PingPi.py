@@ -8,6 +8,10 @@ import time
 import traceback
 import create_visualization
 
+cloudURL = "cloud.your-domain.com"
+usr = "Secret"
+passwd = "Password"
+
 def get_latency():
   # execute ping command
   try:
